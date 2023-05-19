@@ -12,18 +12,32 @@ while True:
 # if the first token is q, quit the loop
     if "q" in tokens:
         break
+    elif len(tokens) < 2:
+        print("Not enough inputs.")
+        continue
+
+    
+
 
 
 # define variables for tokens
     operator = tokens[0]
     num1 = tokens[1]
-    # num2 = tokens[2]
-    # num3 = tokens[3]
+    if not num1.isdigit():
+        print("Not a valid input.")
+        continue
+
     if len(tokens) < 3:
-        num2 = 0
+        num2 = "0"
     else:
         num2 = tokens[2]
+    # print(num2)
+
+    if not num2.isdigit():
+        print("Not a valid input.")
+        continue
     
+
     if operator == "+":
         result = add(float(num1), float(num2))
 
